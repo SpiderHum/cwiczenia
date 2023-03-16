@@ -1,0 +1,1 @@
+#na koniec, musisz wejść w kable (trzecie od góry) i kliknąć kommint, zapisuej to
