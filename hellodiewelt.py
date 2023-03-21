@@ -7,38 +7,59 @@ rąb
 koło
 trapez
 '''
+
 #Stwórz podstawowe obliczenia. 
 #dodaj warunek aby były wieksze od zera. 
-def kwadrat(bokA, pole):
+def kwadrat(): #ta funkcja o wszytsko pyta wewnątrz niej, dzięki temu nie trzeba uwzględniać zadnych argumentów.  
     bokA=int(input("Podaj bok twojego kwadratu"))
-    pole=bokA**2
-    print(f"Pole tego kwadratu to {pole}")
+    return bokA**2
+    
 
-def prostokat(bokA, bokB, pole):
+def prostokat():
     bokA=int(input("Podaj pierwszy bok prostokata"))
     bokB=int(input("Podaj drugi bok prostokata"))
-    pole=bokA * bokB
-    print(f"Pole tego prostokata to {pole}")
+    return bokA * bokB
 
-def rab(przekatnaE, przekatnaF, pole):
+
+def rab():
     przekatnaE=int(input("Jak wiesz, albo nie wiesz, pole rabu jest o tyle specyficzne, ze aby je policzyc uzywamy przekatnych, nie bokow. Podaj pierwsza przekatna."))
     przekatnaF=int(input("A teraz druga"))
-    pole=(przekatnaE*przekatnaF)/2
-    print(f"A o to i pole tego wspanialego rabu -- {pole}")
+    return (przekatnaE*przekatnaF)/2
 
-def trojkat(bokA, wysokosc, pole):
+def trojkat():
     bokA=int(input("A wiec twoim wyborem jest trojkat. Bardzo ciekawa figura. Wiele wzorow i twierdzen. Do jego pola potrzebny jest bok."))
     wysokosc=int(input("Oraz wyskosc"))
-    pole=(wysokosc*bokA)/2
-    print(f"Polem tego trojkata jest {pole}")
+    return (wysokosc*bokA)/2
+    
 
-def kolo(promien, pole):
+def kolo():
     promien=int(input("Kolo nie jest takie proste, w sensie w policzeniu pola. Ale jakos, matematycy doszli do wniosku, ze przyda sie promień."))
-    pole=promien**2*3,14
-    print(f"Pole kola jest niedokladne, wynika to z faktu, ze uzywamy w policzeniu go Liczby Pi, ktora jest nieskonczona, wedle obecnej wiedzy. Z tego wzgledu otrzymasz przyblizony wynik -- {[pole]}")
-    #jezeli chce moze uzytkownik otrzymac alternatywna wersje. Pi * r**2.
-    #mozesz dodac ciekawostke o tym aleternatywnym polu
+    return promien**2*3,14
+  
 
-def trapez
+def trapez():
+    bokA=int(input("Aby policzyc pole trapezu potrzebne sa dwa boki (ten na górze i ten na dole), podaj miare boku >>na górze<<"))
+    bokB=int(input("A teraz tego >>na dole<<"))
+    wysokosc=int(input("Potrzebna jest jeszcze wysokosc"))
+    return (bokA + bokB) * wysokosc/2
 
-def rownoleglobok
+def rownoleglobok():
+    bokA=int(input("Potrzebujemy miary podstawy"))
+    wysokosc=int(input("I miare wysokosci"))
+    return bokA * wysokosc
+
+rozkaz=input("Witaj w kalkuatorze pol figur geometrycznych. Co byś chciał policzyć? Pole KWADRAT? PROSTOKAT? RAB? TROJKAT? KOLO? TRAPEZ? ROWNOLEGLOBOK?")
+if rozkaz == "KWADRAT":
+    print(kwadrat())
+elif rozkaz == "PROSTOKAT":
+    print(prostokat())
+elif rozkaz == "RAB":
+    print(rab())
+elif rozkaz == "TROJKAT":
+    print(trojkat())
+elif rozkaz == "KOLO":
+    print(kolo())
+elif rozkaz == "Równoległobok":
+    print(rownoleglobok())
+else:
+    rozkaz=input("Eeeeo, coś się zepsuło napisz jeszcze raz")
