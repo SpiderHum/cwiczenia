@@ -49,6 +49,7 @@ def rownoleglobok():
     return bokA * wysokosc
 
 rozkaz=input("Witaj w kalkuatorze pol figur geometrycznych. Co byś chciał policzyć? Pole KWADRAT? PROSTOKAT? RAB? TROJKAT? KOLO? TRAPEZ? ROWNOLEGLOBOK?")
+rozkaz=rozkaz.upper()
 if rozkaz == "KWADRAT":
     print(kwadrat())
 elif rozkaz == "PROSTOKAT":
