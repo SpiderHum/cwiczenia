@@ -18,7 +18,6 @@ def kwadrat(): #ta funkcja o wszytsko pyta wewnątrz niej, dzięki temu nie trze
     return bokA**2
     
 
-
 def prostokat():
     bokA=int(input("Podaj pierwszy bok prostokata"))
     bokB=int(input("Podaj drugi bok prostokata"))
@@ -36,6 +35,7 @@ def rab():
         przekatnaF=int(input("Podaj liczbe wieksza od zera"))
     return (przekatnaE*przekatnaF)/2
 
+
 def trojkat():
     bokA=int(input("A wiec twoim wyborem jest trojkat. Bardzo ciekawa figura. Wiele wzorow i twierdzen. Do jego pola potrzebny jest bok."))
     wysokosc=int(input("Oraz wyskosc"))
@@ -43,7 +43,7 @@ def trojkat():
             bokA=int(input("Podaj liczbe wieksza od zera"))
             wysokosc=int(input("Podaj liczbe wieksza od zera"))
     return (wysokosc*bokA)/2
-    
+
 
 def kolo():
     promien=int(input("Kolo nie jest takie proste, w sensie w policzeniu pola. Ale jakos, matematycy doszli do wniosku, ze przyda sie promień."))
@@ -61,6 +61,7 @@ def trapez():
             bokB=int(input("Podaj liczbe wieksza od zera"))
             wysokosc=int(input("Podaj liczbe wieksza od zera"))
     return (bokA + bokB) * wysokosc/2
+
 
 def rownoleglobok():
     bokA=int(input("Potrzebujemy miary podstawy"))
