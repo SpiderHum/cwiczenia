@@ -25,5 +25,5 @@ lancuch=4*pret
 furlong=10*lancuch
 mila=8*furlong
 liga=3*mila
-
-print(f'podałeś ')
+#nie wiedziec czemu out wyglądał tak, do jardów jest wszystko ok. Od nich zle sie dzieje. To tak jakby stala wartosc komputer powielał X razy. A ten X to wcześniejsza zmienna. 
+print(f'{cm} centymetrow to: {cal} cali, {stopa} stop, {jard} jardow, {pret} pretow, {lancuch} lancuchow, {furlong} furlongow, {mila} mil i {liga} lig')

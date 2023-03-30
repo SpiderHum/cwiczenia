@@ -1,8 +1,8 @@
 #dritte Projekt. Ein Stein, Ein Papier, Eine Schere. 
 import random
-i=random.randint(0,3) #output: 0, 1 lub 2, jkaby wyznacza punkt początkowy (0) i ile będzie liczyć (3)
+#i=random.randint(0,2) output: 0, 1 lub 2, jkaby wyznacza punkt początkowy (0) i ile będzie liczyć (3)
 sys=("kamien", "papier", "nozyce")
-odp=sys(i) #coś tu mu nie gra. Sprawdź co.
+odp=random.choice(sys) #random.choice(lista) losuje z listy. Wow. Ale szybko
 use=input("Hehe, zagrajmy w kamien papier nozyce. Ty zaczynaj.")
 print(odp)
 #kamień bije nozyczki
