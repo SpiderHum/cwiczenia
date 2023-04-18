@@ -45,11 +45,11 @@ def space_check(board, position): #sprawdza czy miejsce jest puste
     return board[position] == '#' #jezeli w tablicy board, zaleznie od pozycji jest puste, czytaj jest # to zwraca True, prawdę.
 
 def full_board_check(board):
-    return len([x for x in board if x == '#']) == 1 #len to funkcja sprawdzająca z ilu znaków składa się dany string
+    return len([x for x in board if x == '#']) == 1 #len to funkcja sprawdzająca z ilu obiketów składa się to co jest w środku. Ten konkretny kod to wzór zbioru. Zbiór liczb, które w zbiorze board są równe "#" czytaj to puste pola
 
-def win_check(board, mark):
+def win_check(board, mark): #funkcja sprawdzająca czy gracz wygrał grę
     if board[1] == board[2] == board[3] == mark:
-        return True
+        return True #jezeli miejsce pierwsze. drugie, trzecie w zbiorze są równe znakowi (który moe być X lub O zalenie od gracza) to mamy wina. Czytaj true. Tak samo jest w kadej innej linijce
     if board[4] == board[5] == board[6] == mark:
         return True
     if board[7] == board[8] == board[9] == mark:
@@ -64,51 +64,51 @@ def win_check(board, mark):
         return True
     if board[3] == board[5] == board[7] == mark:
         return True
-    return False
+    return False #w przeciwnym wypadku false, czyli nie ma wina, jeszcze gra się nie zakończyła
 
-def player_choice(board):
-    choice = input("Please select an empty space between 1 and 9 : ")
-    while not space_check(board, int(choice)):
-        choice = input("This space isn't free. Please choose between 1 and 9 : ")
-    return choice
+def player_choice(board): #wybierają gdzie postawić znak
+    choice = input("Please select an empty space between 1 and 9 : ") #o to właśnie prosi
+    while not space_check(board, int(choice)): #kiedy space_check nie jest prawdą:
+        choice = input("This space isn't free. Please choose between 1 and 9 : ") #pyta jeszcze raz o miejsce
+    return choice #zwraca ostateczny wynik. Choice jest zdefiniowany w funkcji, nie jest umieszczony jako argument
 
-def replay():
-    playAgain = input("Do you want to play again (y/n) ? ")
-    if playAgain.lower() == 'y':
+def replay(): #replay
+    playAgain = input("Do you want to play again (y/n) ? ") #pyta czy chcą zagrać ponownie
+    if playAgain.lower() == 'y': #tak, zwraca prawdę
         return True
-    if playAgain.lower() == 'n':
+    if playAgain.lower() == 'n': #nie, zwraca flase
         return False
 
-if __name__ == "__main__":
-    print('Welcome to Tic Tac Toe!')
-    i = 1
+if __name__ == "__main__": #nie wiem
+    print('Welcome to Tic Tac Toe!') #powitanie
+    i = 1 #i będzie ustalało tury
     # Choose your side
     players=player_input()
     # Empty board init
     board = ['#'] * 10
-    while True:
+    while True: #dopuki prawdą jest:
         # Set the game up here
-        game_on=full_board_check(board)
-        while not game_on:
+        game_on=full_board_check(board) #ze stół jest cały pełny
+        while not game_on: #dopuki to NIE prawda
             # Player to choose where to put the mark
             position = player_choice(board)
             # Who's playin ?
-            if i % 2 == 0:
-                marker = players[1]
+            if i % 2 == 0: 
+                marker = players[1] #gracz pierwszy ma kontrole nad znakiem, jezeli i jest parzyste
             else:
-                marker = players[0]
+                marker = players[0] #gracz drugi ma kontrolę nad znakiem jeeli i jest nieparzyste
             # Play !
-            place_marker(board, marker, int(position))
+            place_marker(board, marker, int(position)) 
             # Check the board
-            display_board(board)
-            i += 1
-            if win_check(board, marker):
-                print("You won !")
-                break
-            game_on=full_board_check(board)
-        if not replay():
-            break
-        else:
+            display_board(board) #na końcu zamienia # na liczby, a liczby na X i O
+            i += 1 #i rośnie, zmienia się więc tura
+            if win_check(board, marker): #jezeli ktoś wygrał
+                print("You won !") #wypisz "wygrałeś"
+                break #zakończ kod
+            game_on=full_board_check(board) #w przeciwnym wypadku sprawdza czy stół jest pełny
+        if not replay(): #jezeli stół jest pełny, a oni nie chcą grać dalej:
+            break #zakończ
+        else: #w kadym innym wypadku, czytaj chcą grać dalej, zresetuj stół i i. SPytaj ponownie o X i O i graj od nowa
             i = 1
             # Choose your side
             players=player_input()
