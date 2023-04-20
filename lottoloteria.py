@@ -10,7 +10,7 @@ import random
 
 def numbers():
     for i in range(6):
-        numbar[i]=random.randint(1,10)
+        numbar[i]=random.randint(1,50)
 
 def frage():
     for i in range(6):
