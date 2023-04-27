@@ -23,7 +23,7 @@ def sprawdzenie():
         if numbar[i]==odpowiedź[i]:
             print(f'Zgadles {i}. liczbe, czyli {odpowiedź[i]}')
         else:
-            print("Pudło")
+            print(f"Pudlo, poprawna odpowiedzia byla liczba {numbar[i]}")
         
 print("Ich liebe Deutsch, und du? Ich hasse diese Sprache")
 numbar=[""] * 6
