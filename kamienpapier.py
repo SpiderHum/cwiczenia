@@ -23,5 +23,7 @@ elif odp == "nozyczki" and use == "papier":
     print("przegales")
 elif odp == "papier" and use == "kamien":
     print("przegales")
+else:
+    print("Nie chciałeś się bawić, bring dich um")
 
 
