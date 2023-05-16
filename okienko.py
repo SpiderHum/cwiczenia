@@ -24,6 +24,10 @@ tablica=[[None,None,None],[None,None,None],[None,None,None]] #tablica, czytaj pl
 
 kolejka=random.choice("x","y")
 
+def click(x,y): #x, y - miejsca gdzie klika urzytkownik
+    pass
+
+window.onclick(click) #wywołuje daną funkcję gdy klikniętą zostane dane koordynaty
 
 window.listen()
-window.mainloop()
+window.mainloop() #zapętlenie programu
