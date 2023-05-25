@@ -14,23 +14,22 @@ def numbers():
 
 def frage():
     for i in range(6):
-        a=i+1
-        odpowiedź[i]=int(input(f'Podaj {a}. liczbę w zakresie od 1 do 50\n'))
+        odpowiedź[i]=int(input(f'Podaj {i+1}. liczbę w zakresie od 1 do 50\n'))
 
 def sprawdzenie():
     #stworzyć zbiór x, które występują i w numabr i odpowiedź
     for i in range(6):
         if numbar[i]==odpowiedź[i]:
-            print(f'Zgadles {i}. liczbe, czyli {odpowiedź[i]}')
+            print(f'Zgadles {i+1}. liczbe, czyli {odpowiedź[i]}')
         else:
             print(f"Pudlo, poprawna odpowiedzia byla liczba {numbar[i]}")
         
-print("Ich liebe Deutsch, und du? Ich hasse diese Sprache")
 numbar=[""] * 6
 odpowiedź=[""] * 6
+print("Ich liebe Deutsch, und du? Ich hasse diese Sprache")
 print("Witaj w loterii lotto, chcesz wziąźć udział?")
-frage()
 numbers()
+frage()
 sprawdzenie() #ale on mądry, ten Python, ja niepotrzebnie dałem "numabr" i "odpowiedź" jako argumenty a on mi zwrócił uwagę, ze nie są potrzebne
 
 
